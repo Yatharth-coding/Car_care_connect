@@ -94,58 +94,65 @@
         </div>
     </div>
 
+    <!-- // to make the chatbot work run the command node server.js -->
     <script type="module">
-  const chatBubble = document.getElementById('chat-bubble');
-  const chatContainer = document.getElementById('chat-container');
-  const chatbox = document.getElementById('chatbox');
-  const userInput = document.getElementById('userInput');
-  const sendButton = document.getElementById('sendButton');
+      // Use regular script instead of module since we're not importing
+      const chatBubble = document.getElementById('chat-bubble');
+      const chatContainer = document.getElementById('chat-container');
+      const chatbox = document.getElementById('chatbox');
+      const userInput = document.getElementById('userInput');
+      const sendButton = document.getElementById('sendButton');
 
-  // Ensure chat-container starts hidden
-  chatContainer.style.display = 'none';
+      // Ensure chat-container starts hidden
+      chatContainer.style.display = 'none';
 
-  chatBubble.addEventListener('click', () => {
-    const isHidden = window.getComputedStyle(chatContainer).display === 'none';
-    chatContainer.style.display = isHidden ? 'block' : 'none';
-  });
-
-  function appendMessage(content, type) {
-    const message = document.createElement('div');
-    message.classList.add('message', type);
-    message.textContent = content;
-    chatbox.appendChild(message);
-    chatbox.scrollTop = chatbox.scrollHeight;
-  }
-
-  async function handleUserInput() {
-    const message = userInput.value.trim();
-    if (!message) return;
-
-    appendMessage(message, 'user');
-    userInput.value = '';
-
-    try {
-      // Call your backend API instead of using Groq directly
-      const response = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message })
+      chatBubble.addEventListener('click', () => {
+        const isHidden = window.getComputedStyle(chatContainer).display === 'none';
+        chatContainer.style.display = isHidden ? 'block' : 'none';
       });
-      
-      const data = await response.json();
-      const botReply = data.reply || "I couldn't process that.";
-      appendMessage(botReply, 'bot');
 
-    } catch (error) {
-      console.error('Error:', error);
-      appendMessage('Error: Unable to connect to the server.', 'bot');
-    }
-  }
+      function appendMessage(content, type) {
+        const message = document.createElement('div');
+        message.classList.add('message', type);
+        message.textContent = content;
+        chatbox.appendChild(message);
+        chatbox.scrollTop = chatbox.scrollHeight;
+      }
 
-  sendButton.addEventListener('click', handleUserInput);
-  userInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') handleUserInput();
-  });
-</script>
+      async function handleUserInput() {
+        const message = userInput.value.trim();
+        if (!message) return;
+
+        appendMessage(message, 'user');
+        userInput.value = '';
+
+        try {
+          // Call your backend API
+          const response = await fetch('http://localhost:3001/api/chat', {
+            method: 'POST',
+            headers: { 
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            },
+            body: JSON.stringify({ message })
+          });
+          
+          if (!response.ok) throw new Error('API request failed');
+          
+          const data = await response.json();
+          const botReply = data.reply || "I couldn't process that.";
+          appendMessage(botReply, 'bot');
+
+        } catch (error) {
+          console.error('Error:', error);
+          appendMessage('Error: Unable to connect to the chatbot service.', 'bot');
+        }
+      }
+
+      sendButton.addEventListener('click', handleUserInput);
+      userInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') handleUserInput();
+      });
+    </script>
 </body>
 </html>
