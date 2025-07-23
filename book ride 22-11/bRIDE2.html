@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3c Ride Booking</title>
+  <link rel="stylesheet" href="n.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <a href="project.html"><div class="logo"><img src="../public/images/LOGO.png" alt="" srcset=""  id="logo_img"></div></a>
+        <ul class="nav-links">
+            <li class="nav-item"><a href="../project.html" class="nav-link">Home</a></li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Services</a>
+                <div class="dropdown-content">
+                    <div class="services-grid">
+                        <a href="#" class="service_a">
+                            <div class="service-item">
+                                <div class="service-icon">🚗</div>
+                                <div class="service-details">
+                                    <div class="service-title">Book a Ride</div>
+                                    <div class="service-description">Get driven by professional drivers</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="../html_pages/landing.html" class="service_a">
+                            <div class="service-item">
+                                <div class="service-icon">📱</div>
+                                <div class="service-details">
+                                    <div class="service-title">Book normal servicing </div>
+                                    <div class="service-description">Get your FASTag balance & recharge on the
+                                        go!</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="new.html" class="service_a">
+                            <div class="service-item">
+                                <div class="service-icon">🔧</div>
+                                <div class="service-details">
+                                    <div class="service-title">On location servicing </div>
+                                    <div class="service-description">Book car repair & maintenance services
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="../html_pages/landing.html" class="service_a">
+                            <div class="service-item">
+                                <div class="service-icon">🧼</div>
+                                <div class="service-details">
+                                    <div class="service-title">Car Wash</div>
+                                    <div class="service-description">Doorstep pressure & eco car wash by
+                                        professionals</div>
+                                </div>
+                            </div>
+                        </a>
+                        
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">For Business</a>
+                <div class="dropdown-content">
+                    <div class="business-grid">
+                        <div class="business-item">
+                            <a href="../html_pages/landing.html"> 
+                            <div class="business-icon">🤝</div>
+                            <div class="business-details">
+                                <div class="business-title">Join as Driver Partner</div>
+                                <div class="business-description">Earn with 3C with zero investments</div>
+                            </a>
+                            </div>
+                        
+                        </div>
+                        <div class="business-item">
+                            <a href="../html_pages/landing.html"> 
+                            <div class="business-icon">💼</div>
+                            <div class="business-details">
+                                <div class="business-title">Hire Drivers for B2B</div>
+                                <div class="business-description">Need help with vehicle movements for your biz?</div>
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">About Us</a>
+                <div class="dropdown-content">
+                    <div class="about-grid">
+                        <a href="../html_pages/landing.html" class="about-link">Team</a>
+                        <a href="../html_pages/landing.html" class="about-link">Blog</a>
+                        <a href="../html_pages/landing.html" class="about-link">Contact Us</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <div class="signup">
+                    <a href="user-type.html"><button class="reg">Login</button></a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <script src="script.js"></script>
+</header>
+
+
+  <!-- Main Section -->
+  <main class="main-content">
+    <div class="main">
+
+        <!-- Ride Details Section -->
+        <section class="ride-details">
+            <h2>Get a Ride</h2>
+            <form id="ride-form">
+                <label for="pickup">Pickup Location</label>
+                <input type="text" id="pickup" placeholder="Enter pickup location">
+                
+                <label for="dropoff">Dropoff Location</label>
+                <input type="text" id="dropoff" placeholder="Enter dropoff location">
+                
+                <label for="pickup-time">Pickup Time</label>
+                <select id="pickup-time">
+                    <option value="now">Pickup now</option>
+                    <option value="later">Schedule for later</option>
+                </select>
+                
+                <label for="passengers">Passengers</label>
+                <select id="passengers">
+                    <option value="1">For me</option>
+                    <option value="2">For 2 people</option>
+                    <option value="4">For a group</option>
+                </select>
+                
+                <button type="submit" style="margin-top: 3.3rem; border-radius: 123px;">Calculate Prices</button>
+            </form>
+        </section>
+        
+        <!-- Choose a Ride Section -->
+        <section class="choose-ride">
+            <div class="choose-ride_div">
+            <h2>Choose a Ride</h2>
+
+            <div class="ride-options">
+                  <div class="main-ride">
+                  
+
+                   
+                   <div class="ride-option" id="ride-option-3cXL">
+                     <img src="https://d1a3f4spazzrp4.cloudfront.net/car-types/haloProductImages/package_UberXL_new_2022.png" alt="3cXL SUV" class="ride-img">
+                     <div class="ride-info">
+                       <h3>3cXL</h3>
+                       <p>Comfortable SUVs</p>
+                       <span class="price">₹0</span>
+
+<!-- Inside the ride-option divs -->
+<button class="request-btn" onclick="redirectToOrderSummary('3cXL')">Request 3cXL</button>
+
+
+
+</div>
+</div>
+
+<div class="ride-option" id="ride-option-3cAuto">
+  <img src="https://d1a3f4spazzrp4.cloudfront.net/car-types/haloProductImages/v1.1/TukTuk_Green_v1.png" alt="3c Auto" class="ride-img">
+  <div class="ride-info">
+    <h3>3c Auto</h3>
+    <p>No bargaining, digital payments</p>
+    <span class="price">₹0</span>
+    <button class="request-btn" onclick="redirectToOrderSummary('3c Auto')">Request 3c Auto</button>
+  </div>
+</div>
+
+<div class="ride-option" id="ride-option-3cGo">
+  <img src="https://d1a3f4spazzrp4.cloudfront.net/car-types/haloProductImages/v1.1/UberGo_v1.png" alt="3c Go" class="ride-img">
+  <div class="ride-info">
+    <h3>3c Go</h3>
+    <p>Affordable compact rides</p>
+    <span class="price">₹0</span>
+    <button class="request-btn" onclick="redirectToOrderSummary('3c Go')">Request 3c Go</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- Map Section -->
+        <section id="map-container">
+          <div id="map" style="width: 103%; height: 510px; margin-top: 20px;"></div>
+        </div>
+      </section>
+    </main>
+    
+   <!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+      <div class="footer-column">
+          <img src="../public/images/LOGO.png" alt="" srcset=""  id="logo_foter">
+
+      </div>
+      <div class="footer-column">
+          <h3>About</h3>
+          <ul>
+              <li><a href="#">Team</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contact Us</a></li>
+              <li><a href="#">Chat with us</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h3>Services</h3>
+          <ul>
+              <li><a href="#">Hire a Driver</a></li>
+              <li><a href="#">Hire a Temporary Driver</a></li>
+              <li><a href="#">Hire Hourly Drivers</a></li>
+              <li><a href="#">Hire Chauffeurs</a></li>
+              <li><a href="#">3C Offers</a></li>
+              <li><a href="#">3C Black</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h3>For Business</h3>
+          <ul>
+              <li><a href="#">Hire Drivers for B2B</a></li>
+              <li><a href="#">Join as Driver Partner</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h3>Cities</h3>
+          <ul>
+              <li><a href="#">Bangalore</a></li>
+              <li><a href="#">Chennai</a></li>
+              <li><a href="#">Delhi NCR</a></li>
+              <li><a href="#">Gurgaon</a></li>
+              <li><a href="#">Hyderabad</a></li>
+              <li><a href="#">Kolkata</a></li>
+              <li><a href="#">Mumbai</a></li>
+              <li><a href="#">Pune</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h3>Compare</h3>
+          <ul>
+              <li><a href="#">Ezi Drive</a></li>
+              <li><a href="#">Top4 Call Drivers</a></li>
+              <li><a href="#">Driversindia</a></li>
+              <li><a href="#">Driversonhire</a></li>
+              <li><a href="#">Get Your Driver</a></li>
+              <li><a href="#">Drive Assists</a></li>
+              <li><a href="#">Indian Driver</a></li>
+              <li><a href="#">Namma Driver</a></li>
+              <li><a href="#">Driver Suvidha</a></li>
+              <li><a href="#">Drivers Katta</a></li>
+          </ul>
+      </div>
+  </div>
+  <div class="footer-bottom">
+      <p class="fpara">Terms & Conditions | Privacy Policy | Refund & Cancellation Policy</p>
+      <p class="fpara">Car Care Connect Pvt. Ltd. All Rights Reserved<br>
+          Headquarter at No.112 ,Ram janki chaouk krishna nagar, Damoh, Madhya pradesh, 470675.</p>
+  </div>
+      
+</footer>
+
+  <!-- Leaflet & Script -->
+  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const pickup = localStorage.getItem('ride_pickup') || '';
+      const dropoff = localStorage.getItem('ride_dropoff') || '';
+      const date = localStorage.getItem('ride_date') || '';
+      const time = localStorage.getItem('ride_time') || '';
+      if(document.getElementById('pickup')) document.getElementById('pickup').value = pickup;
+      if(document.getElementById('dropoff')) document.getElementById('dropoff').value = dropoff;
+      if(document.getElementById('date')) document.getElementById('date').value = date;
+      if(document.getElementById('time')) document.getElementById('time').value = time;
+    });
+
+    // Initialize map
+    var map = L.map('map').setView([28.2380, 83.9956], 11);
+    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    var routeControl;
+
+    // Ride type selection
+    var rideTypes = {
+      '3cXL': { basePrice: 50, pricePerKm: 15 },
+      '3c Auto': { basePrice: 20, pricePerKm: 10 },
+      '3c Go': { basePrice: 30, pricePerKm: 12 }
+    };
+
+    // Form Submission Handler
+    document.getElementById('ride-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      var pickupLocation = document.getElementById('pickup').value;
+      var dropoffLocation = document.getElementById('dropoff').value;
+
+      geocodeLocation(pickupLocation, function (pickupLatLng) {
+        geocodeLocation(dropoffLocation, function (dropoffLatLng) {
+          if (pickupLatLng && dropoffLatLng) {
+            // Calculate and update prices for all ride options
+            updatePrices(pickupLatLng, dropoffLatLng);
+
+            if (routeControl) {
+              routeControl.setWaypoints([pickupLatLng, dropoffLatLng]);
+            } else {
+              routeControl = L.Routing.control({
+                waypoints: [pickupLatLng, dropoffLatLng],
+                routeWhileDragging: true
+              }).addTo(map);
+            }
+          } else {
+            alert('Unable to find one or both locations.');
+          }
+        });
+      });
+    });
+
+    // Geocoding function
+    function geocodeLocation(location, callback) {
+      var geocodeUrl = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(location)}`;
+      fetch(geocodeUrl)
+        .then(response => response.json())
+        .then(data => {
+          if (data && data[0]) {
+            var latLng = [parseFloat(data[0].lat), parseFloat(data[0].lon)];
+            callback(L.latLng(latLng[0], latLng[1]));
+          } else {
+            callback(null);
+          }
+        })
+        .catch(err => {
+          console.error('Geocoding error:', err);
+          callback(null);
+        });
+    }
+
+    // Calculate distance between two coordinates
+    function calculateDistance(latLng1, latLng2) {
+      var R = 6371; // Radius of the Earth in km
+      var dLat = (latLng2.lat - latLng1.lat) * (Math.PI / 180);
+      var dLon = (latLng2.lng - latLng1.lng) * (Math.PI / 180);
+      var a =
+        Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(latLng1.lat * (Math.PI / 180)) *
+        Math.cos(latLng2.lat * (Math.PI / 180)) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+      var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      return R * c; // Distance in km
+    }
+
+    // Update prices for all ride options
+    function updatePrices(pickupLatLng, dropoffLatLng) {
+      var distance = calculateDistance(pickupLatLng, dropoffLatLng);
+
+      for (var ride in rideTypes) {
+        var totalPrice = rideTypes[ride].basePrice + (distance * rideTypes[ride].pricePerKm);
+        document.querySelector(`#ride-option-${ride.replace(/\s+/g, '')} .price`).innerText = `₹${totalPrice.toFixed(2)}`;
+      }
+    }
+
+
+    function redirectToOrderSummary(rideType) {
+    const pickupLocation = document.getElementById("pickup").value;
+    const dropoffLocation = document.getElementById("dropoff").value;
+
+    // Get the price from the ride option element
+    const price = document.querySelector(`#ride-option-${rideType.replace(/\s+/g, '')} .price`).innerText;
+
+    // Redirect to order-summary.html with data in URL parameters
+    const url = `order.html?rideType=${encodeURIComponent(rideType)}&pickup=${encodeURIComponent(pickupLocation)}&dropoff=${encodeURIComponent(dropoffLocation)}&price=${encodeURIComponent(price)}`;
+    window.open(url, "_blank"); // Open in a new tab
+  }
+
+
+
+  </script>
+</body>
+
+</html>

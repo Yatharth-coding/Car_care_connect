@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Service Website</title>
+    <link rel="stylesheet" href="../css_styles/project.css">
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div data-include="navbar.html"></div>
+    
+    <!-- Include Chatbot -->
+    <div data-include="chatbot/chatbot.html"></div>
+
+    <div class="wholepageexeptbottom">
+        <header>
+            
+        </header>
+
+        <!-- Slick Image Slider in Hero Section -->
+        <main>
+            <section class="hero">
+                <div class="slick-slider">
+                    <div><img src="../public/images/7.png" alt="Placeholder 1"></div>
+                    <div><img src="../public/images/2.png" alt="Placeholder 2"></div>
+                    <div><img src="../public/images/3.png" alt="Placeholder 3"></div>
+                    <div><img src="../public/images/4.png" alt="Placeholder 4"></div>
+                    <div><img src="../public/images/5.png" alt="Placeholder 5"></div>
+                    <div><img src="../public/images/6.png" alt="Placeholder 6"></div>
+                </div>
+            </section>
+
+            <section class="services">
+                <h2>How does 3C Work</h2>
+                <div class="service-list">
+                    <div class="service-item1">
+                        <img src="../public/images/const.webp" alt="Consult Service" />
+                        <h3>Consult With Our Service Expert</h3>
+                        <p>Speak directly with our car service experts who will guide you through the process, answer
+                            your
+                            queries, and ensure you receive the best car repair solutions tailored to your needs.</p>
+                    </div>
+                    <div class="service-item1">
+                        <img src="../public/images/2.webp" alt="Free Pickup" />
+                        <h3>Schedule Your Car's Free Pickup</h3>
+                        <p>Book a convenient time for 3C to pick up your car from your location, saving you time and
+                            effort
+                            in getting your vehicle to the garage.</p>
+                    </div>
+                    <div class="service-item1">
+                        <img src="../public/images/img.webp" alt="Inspection and Estimation" />
+                        <h3>Get Inspection & Estimation Done</h3>
+                        <p>Vehicles are inspected by professionals and you receive accurate cost estimates for repairs,
+                            ensuring transparency and peace of mind.</p>
+
+            </section>
+
+            <section class="review">
+                <div class="review-heading">
+                    <h2>Customer Review </h2>
+                </div>
+                <div class="slick-slider2">
+                    <div><img src="../public/images/Frame1.png" alt="Placeholder 1"></div>
+                    <div><img src="../public/images/Frame2.png" alt="Placeholder 2"></div>
+                    <div><img src="../public/images/Frame3.png" alt="Placeholder 3"></div>
+                    <div><img src="../public/images/Frame4.png" alt="Placeholder 4"></div>
+                </div>
+            </section>
+
+
+            <section class="faq">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question">How does 3C ensure transparency in car repairs?</button>
+                        <div class="faq-answer">
+                            <p>3C ensures transparency by providing live tracking of vehicle pickup and drop-off, as
+                                well as real-time updates on the progress of car repairs through a job card. This allows
+                                you
+                                to stay informed about the status of your vehicle at all times.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">What is included in the basic services package?</button>
+                        <div class="faq-answer">
+                            <p>The basic services package includes a full inspection, oil change, brake check, and tire
+                                rotation.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">How can I be sure that I'm being fairly charged for the car
+                            repairs?</button>
+                        <div class="faq-answer">
+                            <p>We provide a detailed breakdown of the costs involved and ensure all charges are
+                                transparent
+                                and communicated upfront before the work begins.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">What if I have specific preferences or requirements for my car
+                            repairs?</button>
+                        <div class="faq-answer">
+                            <p>We allow you to customize the repairs to your preferences. You can communicate your
+                                requirements when booking a service.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Can I provide feedback on the service received through
+                            3C?</button>
+                        <div class="faq-answer">
+                            <p>Yes, we encourage you to provide feedback after your service to help us improve the
+                                quality
+                                of our service.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+    <!-- Footer -->
+    <div data-include="footer.html"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="../icon-change.js"></script>
+    <script src="../project.js"></script>
+
+
+    <!-- Slick Slider JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.slick-slider').slick({
+                autoplay: true,
+                autoplaySpeed: 2000, // 2 second delay before sliding
+                dots: true, // Show dots for navigation
+                arrows: true, // Show next/prev arrows
+                infinite: true,
+                speed: 500,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                fade: true, // Smooth fading effect
+                pauseOnHover: true, // Pause on hover
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.slick-slider2').slick({
+                infinite: true,
+                slidesToShow: 3, /* Number of slides visible */
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000, /* Adjusts the speed to 2 seconds */
+                dots: true,
+                arrows: true,
+                pauseOnHover: true /* Stops sliding when you hover over the image */
+            });
+        });
+    </script>
+    <script>
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+
+                // Toggle active class for the clicked FAQ item
+                faqItem.classList.toggle('active');
+
+                // Close other open FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

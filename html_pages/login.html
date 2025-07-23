@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Authentication</title>
+  <link rel="stylesheet" href="../css_styles/styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-header">
+      <div class="auth-logo">
+        <span>3C</span>
+      </div>
+      <h2>Car Care Connect</h2>
+    </div>
+    <div class="auth-form">
+      <form id="email-signin-form">
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <input type="hidden" id="user-type" />
+        <button type="submit" style="width: 350px" onclick="simulateLoginSuccess()" >Sign in</button>  
+      </form>
+      <br>
+      
+      <hr>
+      <p class="signup-link"  ><button id="create-an-acc" style="color :#374151" ><a href="signup.html" style="color: white;">Create an account</a></button></p>
+    </div>
+  </div>
+
+  <script src="../login.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const userType = localStorage.getItem('userType');
+      if (!userType) {
+        window.location.href = 'user-type.html';
+      } else {
+        document.getElementById('user-type').value = userType;
+      }
+    });
+  </script>
+</body>
+</html>

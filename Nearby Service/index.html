@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Listing</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="data.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body class="bg-gray-100">
+  <header>
+    <nav class="navbar">
+        <div class="logo"><img src="../public/images/LOGO.png" alt="" srcset=""  id="logo_img"></div>
+        <ul class="nav-links">
+            <li class="nav-item"><a href="../html_pages/project.html" class="nav-link">Home</a></li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Services</a>
+                <div class="dropdown-content">
+                    <div class="services-grid">
+                        <a href="book ride 22-11/bRIDE1.html" class="service_a">
+                            <div class="service-item">
+                                <div class="service-icon">🚗</div>
+                                <div class="service-details">
+                                    <div class="service-title">Book a Ride</div>
+                                    <div class="service-description">Get driven by professional drivers</div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="../html_pages/landing.html" class="service_a">
+                            <div class="service-item">
+                                <div class="service-icon">📱</div>
+                                <div class="service-details">
+                                    <div class="service-title">Book normal servicing </div>
+                                    <div class="service-description"></div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="new.html" class="service_a">
+                            <div class="service-item">
+                                <div class="service-icon">🔧</div>
+                                <div class="service-details">
+                                    <div class="service-title">On location servicing </div>
+                                    <div class="service-description">Book car repair & maintenance services
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a href="../html_pages/landing.html" class="service_a">
+                            <div class="service-item">
+                                <div class="service-icon">🧼</div>
+                                <div class="service-details">
+                                    <div class="service-title">Car Wash</div>
+                                    <div class="service-description">Doorstep pressure & eco car wash by
+                                        professionals</div>
+                                </div>
+                            </div>
+                        </a>
+                        
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">For Business</a>
+                <div class="dropdown-content">
+                    <div class="business-grid">
+                        <div class="business-item">
+                            <a href="../html_pages/landing.html"> 
+                            <div class="business-icon">🤝</div>
+                            <div class="business-details">
+                                <div class="business-title">Join as Driver Partner</div>
+                                <div class="business-description">Earn with 3C with zero investments</div>
+                            </a>
+                            </div>
+                        
+                        </div>
+                        <div class="business-item">
+                            <a href="../html_pages/landing.html"> 
+                            <div class="business-icon">💼</div>
+                            <div class="business-details">
+                                <div class="business-title">Hire Drivers for B2B</div>
+                                <div class="business-description">Need help with vehicle movements for your biz?</div>
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">About Us</a>
+                <div class="dropdown-content">
+                    <div class="about-grid">
+                        <a href="../html_pages/landing.html" class="about-link">Team</a>
+                        <a href="../html_pages/landing.html" class="about-link">Blog</a>
+                        <a href="../html_pages/landing.html" class="about-link">Contact Us</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <div class="signup">
+                    <a href="user-type.html"><button class="reg">Login</button></a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <script src="script.js"></script>
+</header>
+
+
+  <div class="containermain">
+    <div class="newcont">
+      
+      <div class="containermain1">
+        <form id="search-form" onsubmit="return false;">
+          <input
+            id="search-address"
+            type="text"
+            placeholder="Enter address to search"
+            class="block w-full md:w-2/3 py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+          />
+          <button
+            id="search-btn"
+            class="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700"
+            type="button"
+          >
+            Search
+          </button>
+          <button
+            id="current-location-btn"
+            class="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-700"
+            type="button"
+          >
+            Use Current Location
+          </button>
+        </form>
+      </div>
+      <div class="controls flex flex-wrap gap-4 mb-4">
+        <div class="w-full md:w-1/2 lg:w-1/4">
+          <label for="sort-rating" class="block text-sm font-medium text-gray-700">Sort by Rating:</label>
+          <select id="sort-rating" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+            <option value="desc">Highest to Lowest</option>
+            <option value="asc">Lowest to Highest</option>
+          </select>
+        </div>
+        <div class="w-full md:w-1/2 lg:w-1/4">
+          <label for="sort-distance" class="block text-sm font-medium text-gray-700">Sort by Distance:</label>
+          <select id="sort-distance" class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+            <option value="">None</option>
+            <option value="asc">Nearest to Farthest</option>
+            <option value="desc">Farthest to Nearest</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <h2 id="location-heading" class="section-title text-center text-2xl font-bold text-gray-800 mb-6">Near by Mechanic in Bhopal</h2>
+    <div class="product-list grid grid-cols-1 md:grid-cols-3 gap-6" id="product-list">
+      <!-- Product cards will be dynamically generated here -->
+    </div>
+  </div>
+
+   <!-- Footer -->
+   <footer class="footer">
+    <div class="footer-content">
+        <div class="footer-column">
+            <img src="../public/images/LOGO.png" alt="" srcset=""  id="logo_foter">
+
+        </div>
+        <div class="footer-column">
+            <h3>About</h3>
+            <ul>
+                <li><a href="#">Team</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">Chat with us</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Services</h3>
+            <ul>
+                <li><a href="#">Hire a Driver</a></li>
+                <li><a href="#">Hire a Temporary Driver</a></li>
+                <li><a href="#">Hire Hourly Drivers</a></li>
+                <li><a href="#">Hire Chauffeurs</a></li>
+                <li><a href="#">3C Offers</a></li>
+                <li><a href="#">3C Black</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>For Business</h3>
+            <ul>
+                <li><a href="#">Hire Drivers for B2B</a></li>
+                <li><a href="#">Join as Driver Partner</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Cities</h3>
+            <ul>
+                <li><a href="#">Bangalore</a></li>
+                <li><a href="#">Chennai</a></li>
+                <li><a href="#">Delhi NCR</a></li>
+                <li><a href="#">Gurgaon</a></li>
+                <li><a href="#">Hyderabad</a></li>
+                <li><a href="#">Kolkata</a></li>
+                <li><a href="#">Mumbai</a></li>
+                <li><a href="#">Pune</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Compare</h3>
+            <ul>
+                <li><a href="#">Ezi Drive</a></li>
+                <li><a href="#">Top4 Call Drivers</a></li>
+                <li><a href="#">Driversindia</a></li>
+                <li><a href="#">Driversonhire</a></li>
+                <li><a href="#">Get Your Driver</a></li>
+                <li><a href="#">Drive Assists</a></li>
+                <li><a href="#">Indian Driver</a></li>
+                <li><a href="#">Namma Driver</a></li>
+                <li><a href="#">Driver Suvidha</a></li>
+                <li><a href="#">Drivers Katta</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p class="fpara">Terms & Conditions | Privacy Policy | Refund & Cancellation Policy</p>
+        <p class="fpara">Car Care Connect Pvt. Ltd. All Rights Reserved<br>
+            Headquarter at No.112 ,Ram janki chaouk krishna nagar, Damoh, Madhya pradesh, 470675.</p>
+    </div>
+        
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+/* styles.css */
+
+/* Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f3f4f6;  /* Soft blue background */
+  background-image: url('https://images.unsplash.com/photo-1501594907354-25b0be1302b5?fit=crop&w=800&h=600&q=80'); /* Background image */
+  background-size: cover;
+  background-position: center;
+  color: black;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Container for Login Form */
+.auth-container {
+  background-color: #ffffff; /* Darkened semi-transparent overlay */
+  padding: 34px;
+  border-radius: 10px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+/* Header Styling */
+.auth-header {
+  margin-bottom: 20px;
+}
+
+.auth-logo span {
+  font-size: 50px;
+  font-weight: bold;
+  display: block;
+  margin: 0 auto;
+  color: #181717;
+}
+
+h2 {
+  margin: 10px 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #292525;
+}
+
+/* Button Styling */
+button {
+  background-color: #00bcd4; /* Soft teal for button */
+  color: vlack;
+  border: none;
+  padding: 10px 96px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  width: auto; /* Center the button */
+  margin: 0 auto;
+  display: block;
+  margin-top: 15px;
+}
+
+button:hover {
+  background-color: #0097a7;
+}
+
+/* Input Fields Styling */
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #333;
+  background-color: white;
+  color: black;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+/* Divider Styling */
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.divider span {
+  color: #777;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0 10px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background-color: #333;
+}
+
+/* Sign up link styling */
+.signup-link {
+  margin-top: 10px;
+  color: #bbb;
+  
+}
+
+.signup-link a {
+  color: #00bcd4;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+/* Error Message Styling */
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.auth-form button {
+  background-color: #4338ca;
+  color: white ;
+  border: none;
+  padding: 12px 50px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  width: auto;
+  margin: 10px auto;
+  display: block;
+}
+
+.auth-form button:hover {
+  background-color: #0097a7;
+  
+}
+
+#create-an-acc{
+  background-color: #374151;
+  width: 350px;
+}
+
+hr {
+  border: none;
+  border-top: 3px double #333;
+  color: #333;
+  overflow: visible;
+  text-align: center;
+  height: 5px;
+  padding: 10px ;
+}
+
+hr::after {
+  background: #fff;
+  content: 'Or';
+  padding: 0 4px;
+  position: relative;
+  top: -13px;
+  
+  
+}
+
+.fyp{
+
+  color:blue;
+  padding:20px 20px 0px 165px
+}

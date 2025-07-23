@@ -1,0 +1,117 @@
+<link rel="stylesheet" href="../css_styles/project.css">
+<nav class="navbar">
+    <a href="project.html">
+        <div class="logo"><img src="../public/images/LOGO.png" alt="" srcset="" id="logo_img"></div>
+    </a>
+    <ul class="nav-links">
+        <li class="nav-item"><a href="project.html" class="nav-link">Home</a></li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">Services</a>
+            <div class="dropdown-content">
+                <div class="services-grid">
+                    <a href="../book ride 22-11/bRIDE1.html" class="service_a">
+                        <div class="service-item">
+                            <div class="service-icon">🚗</div>
+                            <div class="service-details">
+                                <div class="service-title">Book a Ride</div>
+                                <div class="service-description">Get driven by professional drivers</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="../html_pages/landing.html" class="service_a">
+                        <div class="service-item">
+                            <div class="service-icon">📱</div>
+                            <div class="service-details">
+                                <div class="service-title">Book normal servicing </div>
+                                <div class="service-description"></div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="new.html" class="service_a">
+                        <div class="service-item">
+                            <div class="service-icon">🔧</div>
+                            <div class="service-details">
+                                <div class="service-title">On location servicing </div>
+                                <div class="service-description">Book car repair & maintenance services
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="../html_pages/landing.html" class="service_a">
+                        <div class="service-item">
+                            <div class="service-icon">🧼</div>
+                            <div class="service-details">
+                                <div class="service-title">Car Wash</div>
+                                <div class="service-description">Doorstep pressure & eco car wash by
+                                    professionals</div>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">For Business</a>
+            <div class="dropdown-content">
+                <div class="business-grid">
+                    <div class="business-item">
+                        <a href="landing.html">
+                            <div class="business-icon">🤝</div>
+                            <div class="business-details">
+                                <div class="business-title">Join as Driver Partner</div>
+                                <div class="business-description">Earn with 3C with zero investments</div>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="business-item">
+                    <a href="landing.html">
+                        <div class="business-icon">💼</div>
+                        <div class="business-details">
+                            <div class="business-title">Hire Drivers for B2B</div>
+                            <div class="business-description">Need help with vehicle movements for your biz?</div>
+                    </a>
+                </div>
+            </div>
+            </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a href="#" class="nav-link">About Us</a>
+            <div class="dropdown-content">
+                <div class="about-grid">
+                    <a href="../html_pages/landing.html" class="about-link">Team</a>
+                    <a href="../html_pages/landing.html" class="about-link">Blog</a>
+                    <a href="../html_pages/landing.html" class="about-link">Contact Us</a>
+                </div>
+            </div>
+        </li>
+        <li class="nav-item">
+            <div class="signup" style="display: block;">
+                <button id="login-btn" onclick="handleLogin()">Login</button>
+            </div>
+
+            <!-- Profile dropdown wrapper -->
+            <div id="profile-dropdown" class="profile-container" style="display: none;">
+                <button id="profile-btn" class="profile-button">
+                    <img src="../public/images/free-user-icon-3296-thumb.png" alt="Profile" class="profile-icon" />
+                </button>
+
+                <!-- Dropdown menu -->
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item"><a href="/Dashboard2/index.html">Dashboard</a></li>
+                    <a href="#"><li class="dropdown-item" >Service History</li></a>
+                        <a href="#"><li class="dropdown-item" >Ride History</li></a>
+                    <li class="dropdown-item" onclick="logout()">Logout</li>
+                </ul>
+            </div>
+        </li>
+
+    </ul>
+</nav>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="../icon-change.js"></script>
+<script src="../project.js"></script>

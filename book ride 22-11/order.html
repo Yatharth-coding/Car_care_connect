@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Summary</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f5f5f5;
+    
+    }
+
+    .order-summary {
+     
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    .summary-detail {
+      margin: 15px 0;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .summary-detail:last-child {
+      border-bottom: none;
+    }
+
+    .summary-label {
+      font-weight: bold;
+    }
+
+    .confirm-btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-align: center;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+
+    .confirm-btn:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="order-summary">
+    <h2>Order Summary</h2>
+    <div class="summary-detail">
+      <span class="summary-label">Ride Type:</span>
+      <span id="rideType"></span>
+    </div>
+    <div class="summary-detail">
+      <span class="summary-label">Pickup Location:</span>
+      <span id="pickup"></span>
+    </div>
+    <div class="summary-detail">
+      <span class="summary-label">Drop-off Location:</span>
+      <span id="dropoff"></span>
+    </div>
+    <div class="summary-detail">
+      <span class="summary-label">Price:</span>
+      <span id="price"></span>
+    </div>
+    <button class="confirm-btn">Confirm Ride</button>
+  </div>
+
+  <script>
+    // Parse URL Parameters
+    const params = new URLSearchParams(window.location.search);
+    const rideType = params.get("rideType");
+    const pickup = params.get("pickup");
+    const dropoff = params.get("dropoff");
+    const price = params.get("price");
+
+    // Display the data in the order summary
+    document.getElementById("rideType").innerText = rideType;
+    document.getElementById("pickup").innerText = pickup || "Not provided";
+    document.getElementById("dropoff").innerText = dropoff || "Not provided";
+    document.getElementById("price").innerText = price || "₹0";
+  </script>
+</body>
+
+</html>

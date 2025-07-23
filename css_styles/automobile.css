@@ -1,0 +1,46 @@
+/* Reset */
+* {
+    margin: 6px;;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1f1f1;
+}
+
+/* Main container */
+.container {
+    display: flex;
+    width: 80%;
+    max-width: 900px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    border-bottom-right-radius: 50px;  /* Adjust the value to increase or decrease the curve */
+    border-top-left-radius: 50px;
+}
+
+/* Carousel section */
+.carousel {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.carousel img {
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+    border:black;
+    border-top-right-radius: 50px;  /* Adjust the value to increase or decrease the curve */
+    border-bottom-left-radius: 50px;
+}
